@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Repositório em memória para guardar Livros e Revistas.
  */
-public class AcervoRepositorio {
+public class AcervoDAO {
 
     private static List<ItemAcervo> dados = new ArrayList<>();
 

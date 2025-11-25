@@ -3,10 +3,10 @@
  */
 public class FormLivroController {
 
-    private AcervoRepositorio repositorio;
+    private AcervoDAO repositorio;
 
     public FormLivroController() {
-        this.repositorio = new AcervoRepositorio();
+        this.repositorio = new AcervoDAO();
     }
 
     /**

@@ -137,7 +137,7 @@ public class PainelGestaoAcervo extends JPanel {
         }
     }
 
-    /*   --- MÉTODO MAIN (Só para testar essa tela) ---
+      // --- MÉTODO MAIN (Só para testar essa tela) ---
     public static void main(String[] args) {
         JFrame janelaTeste = new JFrame("Teste do Grupo 2");
         janelaTeste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -149,5 +149,4 @@ public class PainelGestaoAcervo extends JPanel {
         // Mostra a janela
         janelaTeste.setVisible(true);
     }
-} */
-}
+} 

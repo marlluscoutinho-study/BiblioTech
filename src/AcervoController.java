@@ -5,11 +5,11 @@ import java.util.List;
  */
 public class AcervoController {
 
-    private AcervoRepositorio repositorio;
+    private AcervoDAO repositorio;
 
     public AcervoController() {
        
-        this.repositorio = new AcervoRepositorio();
+        this.repositorio = new AcervoDAO();
     }
 
     /**
