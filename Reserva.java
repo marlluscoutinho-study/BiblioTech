@@ -1,9 +1,9 @@
-package app.modell;
+package app.model;
 
 import java.time.LocalDate;
 
 /**
- * Classe MODELL de reservas
+ * Classe MODEL de reservas
  * @author Ana Elisa
  * @author Davi Porto
  * @author Gustavo Ribeiro
@@ -16,26 +16,34 @@ import java.time.LocalDate;
 public class Reserva {
     private int id;
     private Usuario usuario;
-    private Livro livro;
+    private ItemAcervo itemAcervo; // atualizar para itemAcervo
     private LocalDate dataReserva;
     private LocalDate dataExpiracao;
     private int status;
 
-    private static final int PENDENTE = 1;
-    private static final int DISPONIVEL = 2;
-    private static final int CONCLUIDA = 3;
-    private static final int CANCELADA = 4;
-    private static final int EXPIRADA = 5;
+    // constantes de status (para facilitar o entendimento do código)
+    private static final int PENDENTE = 1; // esperando o item estar disponível para empréstimo
+    private static final int DISPONIVEL = 2; // item pronto para empréstimo
+    private static final int CONCLUIDA = 3; // ja foi feito o empréstimo
+    private static final int CANCELADA = 4; // reserva cancelada pelo usuário ou pela administração
+    private static final int EXPIRADA = 5; // usuário não fez o empréstimo dentro do prazo
 
-    public Reserva(int id, Usuario usuario, Livro livro) {
+    /**
+     * Método construtor de Reserva
+     * @param id ID do livro
+     * @param usuario usuário que fez a reserva
+     * @param itemAcervo item reservado
+     */
+    public Reserva(int id, Usuario usuario, ItemAcervo itemAcervo) {
         this.id = id;
         this.usuario = usuario;
-        this.livro = livro;
+        this.itemAcervo = itemAcervo;
         this.dataReserva = LocalDate.now();
-        this.dataExpiracao = null;
-        this.status = PENDENTE;
+        this.dataExpiracao = null; // criada apenas depois do status DISPONÍVEL
+        this.status = PENDENTE; // Inicia com status PENDENTE
     }
 
+    // Métodos getters e setters
     public int getId() {
         return id;
     }
@@ -50,11 +58,11 @@ public class Reserva {
         this.usuario = usuario;
     }
 
-    public Livro getLivro() {
-        return livro;
+    public ItemAcervo getLivro() {
+        return itemAcervo;
     }
-    public void setLivro(Livro livro) {
-        this.livro = livro;
+    public void setLivro(ItemAcervo itemAcervo) {
+        this.itemAcervo = itemAcervo;
     }
 
     public LocalDate getDataReserva() {
